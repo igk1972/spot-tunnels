@@ -119,4 +119,5 @@ tasks:
           SSH_PORT: '{{.SSH_PORT}}'
           SSH_LOGIN: '{{.SSH_LOGIN}}'
           SSH_KEY: '{{.SSH_KEY}}'
+          ORCHESTRATOR: '{{.ORCHESTRATOR}}'
           NAMESPACE: '{{.NAMESPACE}}'
