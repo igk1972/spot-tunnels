@@ -241,7 +241,6 @@ tasks:
             -e 'MAX_SIZE=0'
             -e 'TIMEOUT_WRITE=1h'
           IMAGE: '{{.REPROXY_IMAGE}}'
-          COMMAND: "--dbg"
 
 
   host-users:*:
