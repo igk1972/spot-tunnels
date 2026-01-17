@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd "$(dirname "$0")"
+
 [ -f '.env' ] && eval "$(cat '.env' | sed -E 's/^(.+)/export \1/')"
 
 TASK_BIN="task"
