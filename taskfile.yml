@@ -229,17 +229,17 @@ tasks:
             -v /run/{{.ORCHESTRATOR}}/{{.ORCHESTRATOR}}.sock:/var/run/docker.sock:ro
           PORTS: "-p 80:8080 -p 443:8443"
           ENVS: |
-            -e 'LOGGER_STDOUT=true'
-            -e 'SSL_TYPE=auto'
-            -e 'SSL_ACME_LOCATION=/data'
-            -e 'SSL_ACME_EMAIL=https-{{.HOSTNAME}}@{{.DNS_ZONE}}'
-            -e 'DOCKER_ENABLED=true'
-            -e 'DOCKER_AUTO=false'
-            -e 'DOCKER_NETWORK=ingress'
-            -e 'STATIC_ENABLED=true'
-            -e 'STATIC_RULES={{.STATIC_RULES | splitLines | join ";"}}'
-            -e 'MAX_SIZE=0'
-            -e 'TIMEOUT_WRITE=1h'
+            -e LOGGER_STDOUT=true
+            -e SSL_TYPE=auto
+            -e SSL_ACME_LOCATION=/data
+            -e SSL_ACME_EMAIL='https-{{.HOSTNAME}}@{{.DNS_ZONE}}'
+            -e DOCKER_ENABLED=true
+            -e DOCKER_AUTO=false
+            -e DOCKER_NETWORK=ingress
+            -e STATIC_ENABLED=true
+            -e STATIC_RULES={{.STATIC_RULES | splitLines | join ";"}}
+            -e MAX_SIZE=0
+            -e TIMEOUT_WRITE=1h
           IMAGE: '{{.REPROXY_IMAGE}}'
 
 
